@@ -1,1980 +1,292 @@
-/*
- * HTML5 Boilerplate
- *
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- *
- * Detailed information about this CSS: h5bp.com/css
- *
- * ==|== normalize ==========================================================
- */
-
-
-/* =============================================================================
-   HTML5 display definitions
-   ========================================================================== */
-
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
-audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
-audio:not([controls]) { display: none; }
-[hidden] { display: none; }
-
-
-/* =============================================================================
-   Base
-   ========================================================================== */
-
-/*
- * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
- * 2. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
- */
-
-html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-
-html, button, input, select, textarea { font-family: sans-serif; color: #222; }
-
-body { margin: 0; font-size: 1em; line-height: 1.4; }
-
-/*
- * Remove text-shadow in selection highlight: h5bp.com/i
- * These selection declarations have to be separate
- * Also: hot pink! (or customize the background color to match your design)
- */
-
-::-moz-selection { background: #f2e5ed; color: #262d3d; text-shadow: none; }
-::selection { background: #f2e5ed; color: #262d3d; text-shadow: none; }
-
-
-/* =============================================================================
-   Links
-   ========================================================================== */
-
-a { color: #00e; }
-a:visited { color: #551a8b; }
-a:hover { color: #06e; }
-a:focus { outline: thin dotted; }
-
-/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
-a:hover, a:active { outline: 0; }
-
-
-/* =============================================================================
-   Typography
-   ========================================================================== */
-
-abbr[title] { border-bottom: 1px dotted; }
-
-b, strong { font-weight: bold; }
-
-blockquote { margin: 1em 40px; }
-
-dfn { font-style: italic; }
-
-hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
-
-ins { background: #ff9; color: #000; text-decoration: none; }
-
-mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
-
-/* Redeclare monospace font family: h5bp.com/j */
-pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
-
-/* Improve readability of pre-formatted text in all browsers */
-pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
-
-q { quotes: none; }
-q:before, q:after { content: ""; content: none; }
-
-small { font-size: 85%; }
-
-/* Position subscript and superscript content without affecting line-height: h5bp.com/k */
-sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
-sup { top: -0.5em; }
-sub { bottom: -0.25em; }
-
-
-/* =============================================================================
-   Lists
-   ========================================================================== */
-
-ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
-dd { margin: 0 0 0 40px; }
-nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
-
-
-/* =============================================================================
-   Embedded content
-   ========================================================================== */
-
-/*
- * 1. Improve image quality when scaled in IE7: h5bp.com/d
- * 2. Remove the gap between images and borders on image containers: h5bp.com/i/440
- */
-
-img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
-
-/*
- * Correct overflow not hidden in IE9
- */
-
-svg:not(:root) { overflow: hidden; }
-
-
-/* =============================================================================
-   Figures
-   ========================================================================== */
-
-figure { margin: 0; }
-
-
-/* =============================================================================
-   Forms
-   ========================================================================== */
-
-form { margin: 0; }
-fieldset { border: 0; margin: 0; padding: 0; }
-
-/* Indicate that 'label' will shift focus to the associated form element */
-label { cursor: pointer; }
-
-/*
- * 1. Correct color not inheriting in IE6/7/8/9
- * 2. Correct alignment displayed oddly in IE6/7
- */
-
-legend { border: 0; *margin-left: -7px; padding: 0; white-space: normal; }
-
-/*
- * 1. Correct font-size not inheriting in all browsers
- * 2. Remove margins in FF3/4 S5 Chrome
- * 3. Define consistent vertical alignment display in all browsers
- */
-
-button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
-
-/*
- * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
- */
-
-button, input { line-height: normal; }
-
-/*
- * 1. Display hand cursor for clickable form elements
- * 2. Allow styling of clickable form elements in iOS
- * 3. Correct inner spacing displayed oddly in IE7 (doesn't effect IE6)
- */
-
-button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; *overflow: visible; }
-
-/*
- * Re-set default cursor for disabled elements
- */
-
-button[disabled], input[disabled] { cursor: default; }
-
-/*
- * Consistent box sizing and appearance
- */
-
-input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *width: 13px; *height: 13px; }
-input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
-input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
-
-/*
- * Remove inner padding and border in FF3/4: h5bp.com/l
- */
-
-button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
-
-/*
- * 1. Remove default vertical scrollbar in IE6/7/8/9
- * 2. Allow only vertical resizing
- */
-
-textarea { overflow: auto; vertical-align: top; resize: vertical; }
-
-/* Colors for form validity */
-input:valid, textarea:valid {  }
-input:invalid, textarea:invalid { background-color: #f0dddd; }
-
-
-/* =============================================================================
-   Tables
-   ========================================================================== */
-
-table { border-collapse: collapse; border-spacing: 0; }
-td { vertical-align: top; }
-
-
-/* =============================================================================
-   Chrome Frame Prompt
-   ========================================================================== */
-
-.chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
-
-/* =============================================================================
-	Grid
-   ========================================================================== */
-#grid{
-
-    /* Dimensions - same width as your grid with gutters */
-    width: 980px;
-
-    /* Grid (left-aligned)
-    position: absolute;
-    top: 0;
-    left: 0;
-    */
-
-    /* Grid (centered) */
-    position: absolute;
-    top: 0;
-    left: 50%;
-    margin-left: -490px;
-	
+* {
+  box-sizing: border-box;
 }
-
-/**
- * Vertical grid lines
- *
- * Set the column width taking the borders into consideration,
- * and use margins to set column gutters.
- */
-#grid div.vert{
-
-    /*width: 139px;
-    border: solid darkturquoise;
-    border-width: 0 1px;
-    margin-right: 19px;
-
-}
-
-#grid div.vert.first-line{
-
-    margin-left: 19px;
-*/
-}
-
-
-/**
- * Horizontal grid lines, defined by your base line height
- *
- * Remember, the CSS properties that define the box model:
- * visible height = height + borders + margins + padding
- */
-#grid div.horiz{
-
-    /* 20px line height */
-    height: 33px;
-    border-bottom: 1px dotted darkgray;
-    margin: 0;
-    padding: 0;
-
-}
-
-/**
-* Classes for multiple grids
-*
-* When using more than one grid, remember to set the numberOfGrids 
-* option in the hashgrid.js file.
-*/
-#grid.grid-1 div.vert{
-
-    /* Vertical grid line colour for grid 1 */
-    border-color: darkturquoise;
-
-}
-#grid.grid-2{
-
-    /* Adjustments */
-    padding: 0 160px;
-    width: 660px;
-
-}
-#grid.grid-2 div.vert{
-
-    /* Vertical grid line colour for grid 2 */
-    border-color: crimson;
-
-}
-
-/*Scale
-
-
-ideal font size 21px	
-baseline grid 34px
-	
-*/
-	
-/* ==|== primary styles =====================================================
-   Author:
-   ========================================================================== */
 
 body{
-	color: #262D3D;
-	font: normal 100%/2.125em "ff-tisa-web-pro",georgia,serif;
-	background: #fefefe;
+  background: white;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.25em;
+  color: #242424;
 }
 
-div.container{
-	padding: 2.5em 1.313em;
-	margin: 0 auto 0em auto;
-	/*border: 10px solid #ddd;
-	border-width: 0px 10px;*/
-	
+.responsive_img {
+  max-width: 100%;
 }
 
+/* ----------- */
+/* TYPOGRAPHY */
+/* ----------- */
 
-
-h1, section.logo span, h2{
-	font-family: "brandon-grotesque",futura,arial,sans-serif;
-	font-weight: 900;
-	text-transform: uppercase;
-	text-align: center;
-	font-size: 1em;
-	
-}
-
-h1{
-	color: #404554;
-	font-size: 1.313em;
-	border-bottom: 1px solid #f2e5ed;
-	display: block;
-	text-align: center;
-	line-height: 120%;
-}
-
-h2{
-	font-size: 1.313em;
-	color: #404554;
-	text-align: left;
-	margin-bottom: 0;
-	line-height: 1em;
-}
-
-p, a{
-	font-size: 1.313em;
-	vertical-align:baseline;
-	margin-top: 1.619em;	
-	margin-bottom: 1.619em;
-}
-
-p a, li a {
-	font-size: 1em;
-}
-
-
-a, a:visited{
-	color: #404554;
-	text-decoration: none;
-	border-bottom: 1px solid #F1B6CE;
-}
-
-a:hover{
-	border-bottom: 1px solid #F1B6CE;
-	color: #F1B6CE;
-}
-
-a:active{
-	color: #fff;
-	border-bottom: 1px solid #fff;
-}
-
-
-
-a.button, input.submit.button{
-	background: #404554;
-	color: #f2e5ed;
-	box-shadow: 0px 2px 1px rgba(51, 51, 51, 0.1);
-	border-bottom: 1px solid #262d3d;
-	border-radius: 0.192em;
-	padding: 0.31em 0.501em 0.192em 0.501em;
-	
-}
-
-a.button:hover, a.button:active, input.submit.button:hover, input.submit.button:active{
-	background: #F1B6CE;
-	color: #404554;
-	border-bottom: 1px solid #333;
-	
-}
-
-a.button:active, input.submit.button:active{
-	position: relative;
-	top: 2px;
-}	
-
-form input, form textarea, form label{
-	font: normal 100%/1.313em "ff-tisa-web-pro",georgia,serif;
-	
-}
-
-
-header{
-}
-
-nav.master{
-}
-
-nav.master ul{
-	position: fixed;
-	top: 0;
-	left: 0;
-	display: block;
-	width: 100%;
-	
-	z-index: 2;
-	background-color: #fefefe;
-	color: #262d3d;
-	box-sizing: border-box;
-	margin: 0 auto;
-	box-shadow: 0px 4px 1px rgba(51, 51, 51, 0.05);
-	border-bottom: 1px solid #ccc;
-	
-	
-	
-		
-	
-}
-
-
-
-nav.master ul li{
-	display: block;
-	float: left;
-	
-	margin: 0 auto;
-	width: 25%;
-}
-
-nav.master ul li.icon{
-	width: 10%;
-	margin-top: 3px;
-}
-
-
-nav.master ul li a{
-	display: block;
-	padding: 0.811em 0.3em;
-	margin: 0 auto 0 auto;
-	text-align: center;
-	font-size: 1em;
-	color: #262d3d;
-	text-decoration: none;
-	border-bottom: none;
-	line-height: 100%;
-}
-
-nav.master ul li a.linkedin, nav.master ul li a.dribbble{
-	margin-top: -1px;
-}
-
-
-	nav.master ul li a:hover, nav.master ul li a.current{
-	color: #f1b6ce;
-	
-	}
-	
-	nav.master ul li a:active{
-	color: #f2e5ed;
-	}
-
-
-/*logo*/
-
-
-div.logoHead{
-	margin-top: 0;
-	margin-bottom: 48px;
-}
-
-div.logoHead img{
-	width: 80%;
-	display: block;
-	margin: 0 auto;
-	padding: 0em;
-}
-
-
-
-
-
-section.logo img{
-	clear: both;
-	display: block;
-	margin: 0 auto;
-}
-
-
-/* footer */
-
-footer.master{
-	margin-top: 1em;
-	border-top: 1px solid #f2e5ed;
-	
-}
-
-footer.master p{
-	font-size: 0.8em;
-	line-height: 130%;
-	width: 50%;
-	float: left;
-}
-
-footer.master img{
-	display: block;
-	width: 100px;
-	float: right;
-	margin-top: 1em;
-	margin-bottom: 1em;
-}
-
-
-
-/* main content */
-
-
-
-section.folio, footer.contact{
-	margin-top: 2.125em;
-	padding: 0em 0;
-}
-
-.into {
-	text-align: center;
-}
-
-section.intro p{
-
-	margin-top: 0;
-}
-
-	
-
-/*folio app*/
-
-section.folio{
-}
-
-section.folio ul{
-	margin: 2.125em auto ;
-	max-width: 826px;
-}
-
-section.folio ul li{
-	float: left;
-	width: 48.5%;
-	margin: 0 10px 10px 0;
-	border-width: 0px;
-}
-
-section.folio ul li:nth-child(even){
-	margin-right: 0em;
-	
-}
-
-
-section.folio a{
-	background: #f2e5ed;
-	width: 100%;
-	margin: 0px;
-	color: #404554;
-	text-decoration: none;
-	border-radius: 0.1em; /*add webkit etc*/
-	display: block;
-	float: left;
-	position: relative;
-		border-width: 0px;
-	
-}
-
-section.folio a:hover{
-	color: #f1b6ce;
-	
-	
-}
-
-section.folio a:active{
-	color: #fff;
-	position: relative;
-	top: 5px;
-	}
-	
-	
-section.folio a.currentFolio{
-	opacity: 0.2;
-}
-	
-	
-section.folio a img{
-	width: 100%; 
-	display: block;
-	border-radius: 0.3em; /*add webkit etc*/	
-}
-
-
-
-
-
-section.folio h2{
-	
-	text-align: center;
-	display: block;
-	font-size: 1em;
-	margin: 0 auto 0 auto;
-	padding: 0.8em 0;
-	line-height:1.313em;
-	position: absolute;
-	bottom: 0;
-	z-index: 1;
-	background: #fff;
-	width: 100%;
-	opacity: 0.6;
-}
-
-section.folio a:hover h2{
-	opacity: 0.9;
-	background-color: #f1b6ce;
-}
-
-
-/*contact*/
-
-/*section#Contact:target{
-	position: fixed;
-	top: 0;
-	left: 0;
-	background-color: #fff;
-	border: 1px solid #ddd;
-	border-width: 0 10px 0px 10px;
-	margin: 3em 0 0 0;
-	padding: 1.313em;
-	box-sizing: border-box;
-	box-shadow: 0px 4px 2px rgba(51, 51, 51, 0.1);
-	
-}
-
-footer.contact{
-		margin-top: 2.125em;
-		clear: both;
-		padding-bottom:2.125em;
-		margin-bottom: 0;
-		min-height: 100px;
-}
-
-footer.contact nav ul{
-}
-
-footer.contact nav ul li{
-	display: block;
-	float: left;
-}
-
-footer.contact nav ul li a{
-	font-size: 1em;
-	margin-right: 2.125em;
-}
-
-
-footer.contact nav ul li span.ss-icon{
-	font-weight: bold;
-	font-size: 1.812em;
-	line-height: 100%;
-	position: relative;
-	top: 0.192em;
-}
-
-footer.contact nav ul li:hover span{
-	color: #b02b2b;
-}
-footer.contact nav ul li:active span{
-	color: #bbb;
-
-}
-*/
-div#contactBlur{
-	width: 100%;
-	height:100%;
-	display: block;
-	background-color: rgba(51, 51, 51, 0.5);
-	position: fixed;
-	top: 0;
-	left: 0;
-}
-
-
-section.contact{
-	position: absolute;
-	margin: 0 auto;
-	background: #fff;
-	box-sizing: border-box;
-	padding: 2.6em 2.125em 1.313em 2.125em;
-	
-
-	width: 100%;
-	box-shadow: 0px 4px 1px rgba(51, 51, 51, 0.05);
-	border-bottom: 1px solid #ccc;
-	max-width: 600px;
-	
-	
-}
-
-section#Leave-A-Message{
-	display: none;
-}
-section#Leave-A-Message:target{
-	display: block;
-	position: relative;
-	top: 0;
-	height: 100%;
-	z-index: 1;
-	
-}
-
-section.contact a.close{
-	position: absolute;
-	top: 0;
-	right: 1.65em;
-	margin-right: 0;
-	display: block;
-	background: #f2e5ed;
-	padding: 0.61em 0.31em 0em;
-	box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.4);
-	
-}
-
-section.contact p{
-	font-size: 1em;
-	line-height: 1.313em;
-}
-
-section.contact ul.contactLinks{
-	padding-left: 0px;
-}
-
-section.contact ul.contactLinks li{
-	list-style-type: none;
-	display: block;
-	width: 80%;
-	margin-bottom: 1em;
-	margin: 0 auto;
-}
-
-section.contact ul.contactLinks li a{
-	display: block;
-	text-align: center;
-	padding: 0px;
-
-	position: relative;
-}
-
-section.contact ul.contactLinks li a:before {
-top: 2px;
-left: -4px;
-position: relative;
-}
-
-section.contact form label{
-	display: block;
-	line-height: 1.313em;
-	width: 100%;
-	margin: 0 auto;
-	display:none;/*check moderizr for placeholder atrribute*/
-}
-
-
-section.contact form input, section.contact form textarea{
-	margin-top: 0;
-	margin-bottom: 2.125em;
-	width: 100%;
-	clear: both;
-	display: block;
-	margin: 0 auto 2.125em auto;
-	
-}
-
-section.contact form textarea{
-	min-height: 100px;
-	
-}
-
-section.contact form input.submit{
-	border: 1px solid #999;
-	border-width: 0 0 1px 0;
-	display: block;
-	margin: 0.501em auto;
-	text-align: center;
-	width: 50%;
-}
-
-
-/*folio items*/
-
-section.folioItems{
-	margin: 0 auto;
-	
-}
-/*
-section.folioItems article.folioItem{
-	width: 100%;
-	background-color: #fefefe;
-	
-	box-shadow: 0px 4px 2px rgba(51, 51, 51, 0.1);
-	
-	border-radius: 0.192em 0.192em 0 0;
-	
-	position: absolute;
-	left: -100%;
-	z-index: 1;
-	
-	top: 0em;
-	border: 1px solid #ddd;
-	
-	margin: 0;
-	
-	
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-		padding: 1.313em;
-	
-}
-
-section.folioItems a.close{
-	width: 1.313em;
-	display: block;
-	color: #b02b2b;
-	border: 2px solid #666;
-	text-align: center;
-	margin-top:-0.812em;
-	margin-right: -0.812em;
-	margin-bottom: 0;
-	float: right;
-	line-height: 1em;
-	padding: 0.3em 0em 0em 0em;
-	-webkit-border-radius: 1.3em;
-	border-radius: 1.3em;
-	width: 1.3em;
-	-moz-background-clip: padding;
-	-webkit-background-clip: padding-box;
-	background-clip: padding-box;
-	box-shadow: 0px 2px 1px rgba(51, 51, 51, 0.1);
-}
-
-section.folioItems a.close:hover, section.folioItems a.close:active{
-	color: #aaa;
-	border: 2px solid #999;
-	
-}
-
-section.folioItems a.close:active{
-	position: relative;
-	top: 2px;
-}	
-*/
-
-
-/*
-
-section.projectImagery div{
-	width: 100%;
-	overflow: auto;
-	box-shadow: inset 0px 3px 5px rgba(200, 200, 200, 0.8);
-	padding: 0 1em 1em 1em;
-	box-sizing: border-box;
-	
-}
-
-section.projectImagery ul.imageList{
-	padding: 0;
-	width: 3000px;
-	background: #ccc;
-}
-
-section.projectImagery ul.imageList li{
-	float: left;
-	display: block;
-}
-
-section.projectImagery img{
-	width: 88%;
-}
-
-
-
-
-
-section.projectImagery nav{
-	
-	margin: 1.313em auto 0 auto;
-	font-weight: 900;
-	display: table;
-}
-
-section.projectImagery nav ul li{
-	float: left;
-}
-
-section.projectImagery nav ul li a{
-	background-color: #333;
-	color: #f7f7f7;
-	width: 1.5em;
-	height: 1.5em;
-	display: block;
-	text-align: center;
-	border-radius:1.5em;
-	line-height: 1.22em;
-	margin: 0.31em;
-	border-bottom: none;
-	box-shadow: 0px 2px 1px rgba(51, 51, 51, 0.1);
-
-
-}
-
-section.projectImagery nav ul li a:hover{
-	background-color: #b02b2b;
-	border-bottom: none;
-}
-
-section.projectImagery nav ul li a.close:active{
-	position: relative;
-	top: 2px;
-}	
-
-section.projectImagery nav ul li a.tallLetters{
-	line-height: 1.4em;
-	
-}*/
-
-
-section.projectDetails p{
-	font-size: 1em;
-	line-height: 1.517em;
-}
-
-section.folioItems img{
-	width: 100%;
-}
-
-section.folioItems h1{
-	font-size: 2.125em;
-	line-height:1em;
-	clear: both;
-	margin: 0 auto;
-}
-
-section.projectDetails a.liveLink{
-	clear: both;
-	display: table;
-	text-align: center;
-	margin: 1.313em auto;		
-}
-
-
-
-
-section.projectDetails a.liveLink{
-	font-size: 1em;
-	line-height: 1.313em;
-}
-
-section.projectDetails a.liveLink p, section.projectDetails a.liveLink span{
-	text-decoration: none;
-	margin: 0;
-}
-
-section.projectDetails a.liveLink span{
-	text-decoration: underline;
-}
-
-/*
-section.folioItems article#folioItem1:target {
-	left: 0px;
-}*/
-
-a.nextProject{
-	font-size: 1em;
-	line-height: 1.313em;
-	display: table;
-	text-align: center;
-	margin: 0 auto 0.313em auto;
-	background: #ddd;
-	color: #999;
-	border-bottom: 1px solid #ccc;
-	}
-
-a.nextProject span{
-	font-size: 0.7em;
-	margin-left: 1.313em;
-}
-
-
-p.bottom{
-	clear: both;
-}
-
-/*portfolio slideshow*/
-
-.galleryContainer {
-	/* defaults for resposive height container */
-	position: relative;
-	width: 100%;
-	height: 0;
-	
-	/* 39% being the ratio we are maintaining 
-	 * calculated by looking at the image 
-	 * ratio: 400/1024 = ~0.39 */
-	padding: 0 0 39% 0;
-}
-
-.iosSlider {
-	width: 100%;
-	
-	/* this height ends up being your maximum height, 
-	 * if you want it to scale forever, set it to 
-	 * a very high number */
-	height: 1500px;
-}
-
-.iosSlider .slider {
-	width: 100%;
-	height: 100%;
-}
-
-.iosSlider .slider .item {
-	float: left;
-	
-	width: 100%;
-}
-
-.iosSlider .slider .item img {
-	width: 100%;
-	height: auto;
-}
-
-
-
-
-
-
-
-
-
-/* controls */
-
-.galleryContainer .prev, .galleryContainer .next {
-	position: absolute;
-	top: 0;
-	z-index: 10;
-	line-height: 2.125em;
-	background-color: rgba(242, 229, 237, 0.8);
-	padding: 0.31em 0em 0em 0em;
-	border: 0px;
-	position: absolute;
-	font-size: 1.313em;
-	top: 50%;
-	margin-top: 0%;
-	width: 1.313em;
-	text-align: center;
-	color: #262d3d;
-}
-.galleryContainer .next {
-	right: 0;
-}
-
-.galleryContainer .prev:hover, .galleryContainer .next:hover{
-	color: #f1b6ce;
-	background-color: #f2e5ed;
-}
-
-
-
-
-.galleryContainer .selectorsBlock {
-	position: absolute;
-	bottom: 10px;
-	width: 100%;
-	height: 7.5%;
-}
-
-.galleryContainer .selectorsBlock .selectors {
-	position: relative;
-	top: 0;
-	left: 0;
-	margin: 0 auto;
-	width: 30%;
-	height: 100%;
-}
-
-.galleryContainer .selectorsBlock .selectors .item {
-	position: relative;
-	top: 0;
-	left: 0;
-	float: left;
-	width: 10%;
-	height: 100%;
-	margin: 0 0 0 5%;
-	border-radius: 50%;
-	border: 1px solid #fff;
-}
-
-.galleryContainer .selectorsBlock .selectors .selected, .galleryContainer .selectorsBlock .selectors .selected:hover{
-	background: #f1b6ce;
-}
-
-.galleryContainer .selectorsBlock .selectors .first {
-	margin-left: 0;
-}
-
-.galleryContainer .selectorsBlock .selectors .item:hover{
-	background-color: #fff;
-}
-
-
-
-/*hide controlls if no javascript*/
-
-.item, .prev, .next, selectorsBlock{
-	display: none;
-}
-
-
-.firstItem{
-	display: block;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*CV PAGE*/
-
-
-section.CVContent p{
-	font-size: 1em;
-	line-height: 1.517;
-	clear: both;
-}
-
-section.profile{
-	margin-top: 0em;
-}
-
-img.profilePortrait, section.university img{
-	width: 33%;
-	float: left;
-	margin-bottom: 1.313em;
-	margin-right: 1.313em;
-}
-
-section.profile div.CVCredentials{
-	width: 60.8%;
-	background: #fff;
-	background: rgba(255, 255, 255, 0.4);
-}
-
-section.profile div.CVCredentials, section.university div{
-	float: left;
-}
-
-
-
-section.profile div.CVCredentials h1{
-	margin: 0;
-	line-height: 1.313em;
-	display: table;
-}
-
-section.profile div.CVCredentials ul{
-	padding: 0 0 0 0;
-	margin: 0;
-	line-height: 2.125em;
-	font-size: 0.812em;
-}
-section.profile div.CVCredentials ul li{
-	list-style-type: circle;
-	list-style-position: inside;
-}
-
-section.profile div.CVCredentials ul li, section.university div span{
-	line-height: 1.313em;	
-	margin-top: 0.812em;
-}
-
-section.university{
-	margin-top: 2em;
-}
-
-section.university div span{
-	display: block;
-}
-
-section.profile div.CVdl{
-	clear: both;
-	text-align: center;
-	border: 1px solid #f1b6ce;
-	background: #fff;
-	padding: 0.6em 0em 0.3em 0em;
-	margin-top: 0.502em;
-	
-}
-
-section.profile div.CVdl p{
-
-	display: inline;
-	
-	font-size: 0.812em;
-	position: relative;
-	top: -2px;
-}
-
-section.profile div.CVdl p span.ss-icon{
-}
-
-section.profile div.CVdl a{
-	font-size: 1em;
-	margin: 1.7em auto 2.125em auto;
-	padding-top: 0.501em;
-	
-}
-
-
-section.experience section#mbd, section.experience section#freelance{
-	background-color: #fff;
-	border: 1px solid #f1b6ce;
-	padding: 0em 1.313em 1em 1.313em;
-	
-}
-
-section.experience a.revealJobInfo{
-	display: none;
-	font-size: 1em;
-}
-
-section.experience section#freelance{
-	margin-top: 1.313em;
-}
-
-section.experience span.jobTitle, section.experience div.timePeriod{
-	margin-top: 0.501em;
-	margin-bottom: 0.501em;
-	font-size: 0.812em;
-	line-height: 1.313em;
-	display: block;
-	color: #404554;
-
-	
-	
-}
-
-section.experience span.jobTitle{
-	font-weight: bold;
-}
-
-
-
-
-section.skills ul{
-	list-style-type: none;
-	padding-left: 0;
-	margin-bottom: 1em;
-}
-
-section.skills ul li{
-	
-	line-height: 1.313em;
-	margin-top: 0.31em;
-
-}
-
-section.skills ul li img{
-	margin-top:-2px;
-	margin-right: 0.6em;
+h1, h2, h3, h4, h5, p {
+  margin-top: 0px;
+  line-height: 1.25em;
 }
 
-section.university div span.establishment, section#mbd time, section#freelance time{
-	font-style: italic;
+a, a:active, a:visited, {
+  color: inherit;
 }
 
-
-section.personal ul{
-	list-style-type: none;
-	padding-left: 0;
-}
-
-section.personal ul li{
-	display: block;
-	float: left;
-	width: 18.31%;
-	margin-right: 0.502em;
-}
-
-section.personal ul li:last-child{
-	margin-right: 0em;
-}
-
-section.personal img{
-	margin: 0 auto;
-	display: block;
-}
-
-
-
-/* ==|== media queries ======================================================
-
-Breakpoints:
-Ultra Wide
-max 1400px
-
-Desktop
-960 px or higher
-
-Tablet (portrait orientation)
-750-959 px
-Mobile (landscape orientation)
-470-749 px
-
-Mobile (portrait orientation)
-Less than 469 px
-   ========================================================================== */
-   
-   
-  /*ForCV Menu Item Only
-@media only screen and (max-width: 32.11em) {
-	nav.master ul li.cv a{
-		margin-top: -0.5em;
-		padding-bottom: 0px;
-		margin-bottom: 0.5em;
-	}
-}   
-*/
-
-  /*Mobile Portrait*/
-  /* (A) Applied to 519px and smaller*/
-  
-@media only screen and (max-width: 519px) {
-	
-	
-
-	
-	section.logo img{
-		height: 2.125em;
-		float: left;
-		margin-left: 10%;
-		}
-	
-	section.logo h1{
-		
-		font-size: 1.313em;
-		margin-top: -0.20em;
-		text-align: left;
-		margin-left: 45%;
-		line-height: 1em;
-	}
-	
-	section.logo h1 span{
-		letter-spacing: 0.192em;
-		display: inline;
-			text-align: left;
-		
-	}
-	
-	section.intro{
-		font-size: 12px;
-		line-height: 217%;
-	}
-	
-	
-	
-	section.intro a{
-		clear: both;
-		display: block;
-		width: 100%;
-		text-align: center;
-				padding: 0.225em 0 0.225em 0;
-		margin: 1.7em auto 2.125em auto;
-				
-	}
-	
-	
-	
-
-	
-	/*section.folioItems article#folioItem1:target {
-		-webkit-transition: left 0.3s ease-out;
-		moz-transition: left 0.3s ease-out;
-		-o-transition: left 0.3s ease-out;
-		transition: left 0.3s ease-out;
-	}*/
-}   
-
-   
-   
-
-  
-   
-/* Mobile Landscape and tablet portrait*/
-/* (B) Applied to 520px and larger*/
-@media only screen and (min-width: 520px) {
-
-	p{
-	font-size: 1em;
-	line-height: 1.313em;
-	}
-
-	
-	footer.master img{
-		margin-right: 1em;
-	}
-	
-	section.contact {
-		width: 520px;
-		left: 50%;
-		margin-left: -260px;
-
-	}
-	
-	section.intro, section.logo{
-		width: 100%;
-		float: left;
-	}
-	
-	
-	section.logo{
-		margin-right: 5.1%;
-	}
-	
-	
-	
-	section.intro{
-		border-bottom: none;
-	}
-	
-	section.intro a{
-			padding: 0.501em;
-	
-		display: block;
-		clear: both;
-		text-align: center;
-		width: 66%;
-		margin: 1.619em auto 5em auto;		 /*fix height*/
-	}
-	
-	section.folio{
-		clear: both;
-	}
-	
-
-	
-	section.folio ul li{
-		float: left;
-		width: 31.9%;
-		
-		}
-		
-	section.folio ul li:nth-child(even){
-		margin-right: 10px;
-				
-	}
-	
-		section.folio ul li:nth-child(3n){
-		margin-right: 0px;
-	}
-	
-	
-	/* CV PAGE*/
-	
-	
-	
-	 section.profile ul li{
-	  		font-size: 1.313em;
-	  		
-	  	}
-	 
-	 	section.profile div.CVdl{
-	 		margin: 1.313em auto;
-	 		width: 60%;
-	 		  float: left;
-	 		  clear: none;
-	 	}
-	
-section.skills ul li{
-	float: left;
-	width: 50%;
-}
-	
-	section.university div.UniMeta{
-		width: 66%;
-	}
-	
-	
-	
-	
-	}
- 
- 
- 
- /*tablet portrait */
- /* (C) applied to 700 and larger */
-@media only screen and (min-width: 700px){
- 	
- 	
- 	div.container{
- 		// border: 1em solid #ccc;
- 		padding: 3em 3em;
- 	}
- 	
- 	nav.master ul#navigation{
- 		border-left: 1em solid #ccc;
- 		border-right: 1em solid #ccc;
- 	}
- 	
- 	div.logoHead img{
- 		margin-bottom:48px
- 	}
- 	
- 	.galleryContainer .selectorsBlock .selectors .item{
- 		border: 2px solid #eee;
- 	}
-  	
- 	h1, section.folioItems h1{
- 		margin-top: 2.5em;	
- 		font-size: 3em;
- 		
- 	}
- 	
- 	section.contact h1{
- 		margin-top: 0.313em;
- 	}
- 	
- 	section.folioItems h1{
- 		margin-top: 0;
- 	
- 	}
-	
-	h2{
-		font-size: 2em;	
-	}
-	
-	section.experience h1{
-		margin-top: 1.313em;
-	}
-	
-	section.experience span.jobTitle, section.experience div.timePeriod{
-		font-size: 1.313em;
-	}
-	
-	
- 	section.profile div.CVCredentials h1{
- 		font-size: 2.5em;
- 		line-height: 1em;
- 		text-align: left;
- 	}
- 	
- 	p, section.CVContent p, section.projectDetails p{
- 		font-size: 1.313em;
- 	}
- 	
- 	
- 	section.profile div.CVdl{
- 		clear: both;
- 		width: 100%;
- 		font-size: 1.5em;
- 		padding: 0 1em 0.1em 1em;
- 		box-sizing: border-box;
- 	}
- 	
- 	section.profile div.CVdl a {
- 	padding-bottom: 0.501em;
- 	
- 	
- 	}
- 	section.skills ul li{
- 		
- 		font-size: 1.313em;
- 		
- 	}
- 	section.university div.UniMeta span{
- 		font-size: 1.313em;
- 	}
- }
- 
- 
- 
-   
-/* Desktop and ipad landscape */
-/* (D) applied to 960px and larger*/
-@media only screen and (min-width: 960px){
-
-p{
-	max-width: none;
-	width: 66%;
-}
-
-section.contact p {
-	width: 100%;
-}
-
-
-
-div.container{
-	border-width: 0;
-	padding: 0;
-	
-	max-width: 1200px;
-}
-
-section.intro, section.folio{
-	padding: 0 3em;
-	box-sizing: border-box;
-	
-}
-
-section.intro p{
-	margin: 30px auto 1.619em auto ;
-	
-}
-
-div.logoHead{
-	width: 100%;
-	
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+a:hover {
+  color: inherit;
+  text-decoration: none;
 }
 
-div.logoHead img{
-	/*width: 60%;*/
-	width: 38.5%;
-}
+.display_one {
+  font-family: 'Calistoga', cursive;
+  text-align: center;
+  margin-top: 0;
+  font-size: 15.8vw;
+  margin-bottom: 32px;
 
-header{
-	min-height: 50px;
-	position: relative;
+  @media all and (min-width: 520px) {
+    font-size: 88px;
+  }
 }
 
-nav.master{
-	background-color: #fefefe;
-	width: 100%;
-	position: absolute;
-	clear: both;
-	display: block;
-	line-height: 2.9em;
-	z-index: 0;
-}
+.display_two {
+  font-family: 'Calistoga', cursive;
+  font-size: 10vw;
+  margin: 0 0 4px;
 
-nav.master ul#navigation{
-	border-width: 0px;
-	position: absolute;
-	background: transparent;
-	box-shadow: none;
-	width: 430px;
-	border-bottom: 1px solid #f2e5ed;
-	padding-top: 3px;
-		background-color: #fefefe;
-		
-		margin-left: -215px;
-		left: 50%;
+  @media all and (min-width: 520px) {
+    font-size: 52px;
+  }
 }
-
-
-
 
+.display_three {
+  font-family: 'Calistoga', cursive;
+  font-size: 6.3vw;
+  margin: 0 0 4px;
 
-nav.master ul li{
-	margin-right: 1.313em;
-	width: auto;
+  @media all and (min-width: 520px) {
+    font-size: 32px;
+  }
 }
 
-nav.master ul li.icon{
-	width: auto;
+.sub_title {
+  font-size: 18px;
+  margin-bottom: 0;
 }
 
-nav.master ul li:first-child{
-	margin-left: 1.313em;
-}
-
-
-nav.master ul li a{
-	display: block;
-	padding: 0.811em 0.3em;
-	margin: 0 auto 0 auto;
-	text-align: center;
-	font-size: 1em;
-	text-decoration: none;
-	border-bottom: none;
-	line-height: 100%;
-}
+.body_featured {
+  margin:0 0 16px;
+  font-size: 5.6vw;
+  line-height: 1.4em;
 
-footer.master p {
-	margin-left: 4em;
-}
+  @media all and (min-width: 520px) {
+    font-size: 26px;
+  }
 
-footer.master img {
-	margin-right: 3em;
 }
 
-section.contact {
-	padding-top: 1.313em;
+.caption {
+  color: #8a8a8a;
+  margin-top: 4px;
+  font-size: 12px;
+  display: block;
+  @media all and (min-width: 520px) {
+      margin-top: 8px;
+      font-size: 16px;
+    }
 }
 
-section.contact h1{
-	margin-top: 0em;
-}
+/*------*/
+/* Links n Buttons */
+/*------*/
 
-section.contact p {
-	width: 100%;
+.clear_link {
+  text-decoration: none;
+  color: inherit;
+  &:hover, &:visited, &:active{
+    color: inherit;
+  }
 }
 
-section.contact a.close{
-	margin-top: -5px;
-}
-section.intro a{
-	font-size: 1em;
-	text-decoration: none;
-	border-bottom: 1px solid #000;
-	}
-	
-	section.intro a:hover{
-		border-bottom: 1px solid #999;
-	}
-	
-	section.intro a:active{
-	color: #bbb;
-	border-bottom: 1px solid #bbb;
-	
-	}
-	
-	
-	
-	section.folio ul{
-	max-width: 66%;
-	}
-	
-	section.CVContent{
-		margin: 2em 1.313em;
-		clear: both;
-	}
-	
-	section.CVContent p{
-		margin-left: auto;
-		margin-right: auto;
-	}
 
-   section.profile{
-   	background: url(../images/profileWide.jpg) no-repeat;
-   	-webkit-background-size: cover;
-   	-moz-background-size: cover;
-   	-o-background-size: cover;
-   	background-size: cover;
-   	width: 100%;
-   	margin: 0;
-   	margin-bottom: 1.313em;
-   	padding-left:0px;
-   	padding-right: 2em;
-   	box-sizing: border-box;
-   }
-   
-   section.profile img.profilePortrait{
-   	display: none;
-   }
-   
-   section.profile div.CVCredentials {
-   	width: 33%;
-   	padding: 1em;
-   	margin-left: 60%;
-   	box-sizing: border-box;
-   }
-   
 
-   
-   section.profile div.CVdl{
-   margin-top: 0px;
-   font-size: 1em;
-   margin-bottom: 0px;
-      	box-sizing: border-box;
-   
-   
-   }
-   
-   section.profile p.aboutIntro{
-   	margin-left: 60%;
-   	background: #fff;
-   	background: rgba(255, 255, 255, 0.4);
-   	width: 33%;
-   	font-size: 1.1em;
-   	padding: 1em 1em 2em 1em;
-   	   	box-sizing: border-box;
-   	   	margin-bottom: 0px;
-   	   	margin-right: 1em;
-   	
-   }
-   
-   section.profile div.CVdl p{
-   top: 0px;
-   left: -1em;
-   font-size: 1em;
-   }
-   
-   section.experience p.moreJobInfo{
-   	width: 100%;
-   }
-   
-  section.experience section#mbd, section.experience section#freelance{
-  
-  	width: 42.4%;
-  	float: left;
-  	
+.button{
+  display: block;
+  padding: 5vw;
+  background-color: #FF664A;
+  color: #4B4B4B;
+  text-align: center;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 32px;
+  font-size: 5.6vw;
+
+  &:hover {
+    background-color: #DE614A;
+  }
+
+  &:visited {
+    color:inherit;
+  }
+
+  @media all and (min-width: 520px) {
+    display: inline-block;
+    font-size: 26px;
+    padding: 16px;
+  flex-basis: auto;
 
   }
-	
-	section.experience section#mbd{
-		margin-right: 5.1%;
-	}
 
-	section.experience section#freelance{
-		margin-top: 0;
-		float: right;
-	}
-	
-	
-	section.skills ul {
-		width: 66%;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	
-	section.university div.UniMeta{
-		width: 66%;
-		margin: 0 auto;
-		float: none;
-		
-	}
-	
-	section.university img{
-		width: 15%;
-		clear: left;
-				
-	}
+}
 
-	section.personal img{
-		margin: 0 auto;
-		display: block;
-	}
-	
-	section.folioItems img{
-		width: 66%;
-		margin: 1.313em auto 0 auto;
-		display: block;
-	}
-	
-	section.folioItems h1{
-		width: 66%;
-		margin: auto auto;
-		display: block;
-	}
-	
-	section.projectDetails p{
-		text-align: center;
-		display: table;
-		margin: auto auto;
-	}
-	
-	section.projectDetails p{
-	margin-top: 2em;
-		margin-bottom: 3em;
-	}
-	
-	a.nextProject{
-		margin-bottom: 3em;
-	}
-	
+.link_outer {
+  width: 100%;
+  background-color: #E0E0E0;
+  margin: 0 auto;
+
+}
+
+.back_link, .next_link {
+  width: 100%;
+  font-family: 'Calistoga', cursive;
+  font-size: 6.3vw;
+  line-height: 1.25em;
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px 24px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @media all and (min-width: 520px) {
+    font-size: 32px;
+    padding: 16px 32px;
+  }
+}
+
+.next_link {
+  justify-content: space-between;
+}
+
+  .back_arrow {
+    margin-right: 8px;
+    align-self: center;
+    @media all and (min-width: 520px) {
+      margin-right: 16px;
+    }
+  }
+
+  .link_subtitle {
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+
+    @media all and (min-width: 520px) {
+      font-size: 16px;
+    }
+  }
+
+  .forward_arrow{
+    align-self: center;
+  }
+/* ----------- */
+/* CONTAINERS */
+/* ----------- */
+
+.section {
+  padding: 40px 24px;
+  max-width: 800px;
+  margin: 0 auto;
+  @media all and (min-width: 520px) {
+    padding: 64px 32px;
+  }
+}
+
+.section_large {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  @media all and (min-width: 520px) {
+    display: block;
+    padding: 40px 32px;
+
+  }
+}
+
+/* ----------- */
+
+.header {
+  background-color: #FFD0C6;
+}
+
+  .header_title {
+    color: #A20000;
+  }
+
+  .header_intro {
+    text-align: center;
+    color: #A20000;
+  }
+
+.section_footer {
+  display: flex;
+}
+
+.footer {
+  background-color: #FF664A;
+  color: #242424;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+  .footer_title{
+    margin-bottom: 24px;
+  }
+
+  .footer_info{
+    margin-bottom: 16px;
+  }
+/* ----------- */
+
+
+.project_client {
+  margin: 0;
+}
+
+.project_role {
+  font-size: 16px;
+  margin-bottom: 32px;
+  color: #8a8a8a;
+  margin: 0 0 8px;
+  @media all and (min-width: 520px) {
+      font-size: 20px;
+  }
 }
 
 
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+
+
+
+/* ----------- */
+
+.article_body {
+  font-size: 18px;
+  margin-bottom: 32px;
+  line-height: 1.4em;
 }
 
-
-
-/* ==|== non-semantic helper classes ========================================
-   Please define your styles before this section.
-   ========================================================================== */
-
-/* For image replacement */
-.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
-.ir br { display: none; }
-
-/* Hide from both screenreaders and browsers: h5bp.com/u */
-.hidden { display: none !important; visibility: hidden; }
-
-/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
-.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
-
-/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
-.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
-
-/* Hide visually and from screenreaders, but maintain layout */
-.invisible { visibility: hidden; }
-
-/* Contain floats: h5bp.com/q */
-.clearfix:before, .clearfix:after { content: " "; display: table; }
-.clearfix:after { clear: both; }
-.clearfix { *zoom: 1; }
-
-
-
-/* ==|== print styles =======================================================
-   Print styles.
-   Inlined to avoid required HTTP connection: h5bp.com/r
-   ========================================================================== */
-
-@media print {
-  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
-  a, a:visited { text-decoration: underline; }
-  a[href]:after { content: " (" attr(href) ")"; }
-  abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
-  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  thead { display: table-header-group; } /* h5bp.com/t */
-  tr, img { page-break-inside: avoid; }
-  img { max-width: 100% !important; }
-  @page { margin: 0.5cm; }
-  p, h2, h3 { orphans: 3; widows: 3; }
-  h2, h3 { page-break-after: avoid; }
+.article_role{
+  margin-bottom: 32px;
 }
 
-
-.intro {
-	text-align: center;
+.article_img_wrapper {
+  margin-bottom: 10vw;
 }
 
-.links {
-	width: 120px;
+.img_desktop {
+  border: 1px solid #e0e0e0;
 }
+
+/* ----------- */
+
