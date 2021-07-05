@@ -275,14 +275,14 @@ body{
   border-radius:  160px;
   height:  160px;
   position: absolute;
-  right: 20vw;
+  right: 2vw;
   top: -120px;
   width: 160px;
   z-index: -1;
   @media (min-width: $bp-desktop) {
     top: -200px;
   }
-  @media (min-width: $bp-desktop) {
+  @media (min-width: $bp-extrawide) {
     top: -140px;
   }
 }
