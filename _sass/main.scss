@@ -247,6 +247,9 @@ body{
   padding-top: 60px;
   padding: 20px 0;
   position: relative;
+  @media (min-width: $bp-desktop) { 
+    padding-top:40px
+  }
 }
 
 .footer_title {
