@@ -20,6 +20,7 @@ $teal-normal: #2e7a76;
 
 $bp-tablet: 768px;
 $bp-desktop: 990px;
+$bp-extrawide: 1400px;
 
 * {
   box-sizing: border-box;
@@ -56,6 +57,9 @@ body{
   }
 }
 
+.container--footer {
+  position:relative;
+}
 
 .type_site_title {
   font-size: 160px;
@@ -272,11 +276,14 @@ body{
   height:  160px;
   position: absolute;
   right: 20vw;
-  top: -30px;
+  top: -120px;
   width: 160px;
   z-index: -1;
   @media (min-width: $bp-desktop) {
-        top: -60px;
+    top: -200px;
+  }
+  @media (min-width: $bp-desktop) {
+    top: -140px;
   }
 }
 
